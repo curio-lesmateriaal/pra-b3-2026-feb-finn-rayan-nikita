@@ -13,6 +13,11 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
+.login-form{
+    background-color: #999;
+    justify-content: end;
+}
+
 /* Sections
    ========================================================================== */
 
