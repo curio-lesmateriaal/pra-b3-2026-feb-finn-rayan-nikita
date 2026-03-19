@@ -1,11 +1,35 @@
 body{
-    background-image: url('../img/pretparkLogo.png');
-    background-size: 250px;
-    background-position: left;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin-top: 0;
+    background-image: url('../img/background1.png');
+    background-size: cover;
+}
+.container{
+    background-image: url('../img/background2.jpg');
+    background-size: cover;
+    margin-left: 400px;
+    margin-top: 100px;
+    margin-bottom: 25px;
+    max-width:600px;
+    width: 100%;
+    padding: 40px;
+    box-shadow: 0 0 10px black;
+    border-radius: 30px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+.form-group{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.form-group input{
+    padding: 15px 20px;
+    width: 275px;
+    border-radius: 30px;
+    border: 0px solid rgb(70, 2, 120);
+    box-shadow: 0 0 5px black;
+    margin-bottom: 20px;
+    background: transparent;
+    outline: none;
+    color: black;
 }

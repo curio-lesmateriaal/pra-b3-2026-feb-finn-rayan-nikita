@@ -4,7 +4,7 @@
 
 <head>
     <title>StoringApp / Meldingen / Nieuw</title>
-    <?php require_once __DIR__.'/../head.php'; ?>
+    <?php require_once __DIR__.'/../header.php'; ?>
 </head>
 
 <body>
@@ -18,39 +18,38 @@
             <input type="hidden" name="action" value="create">
 
             <div class="form-group">
-                <label for="attractie">Naam van het taak:</label>
-                <input type="text" name="attractie" id="attractie" class="form-input">
+                <label for="attractie">Titel:</label>
+                <input type="text" name="attractie" id="attractie" class="form-input" placeholder="titel">
             </div>
             <div class="form-group">
-                <label for="type">Type</label>
+                <label for="type">Afdeling</label>
                 <select name="group" id="group">
-                <option value="">Kies een type</option>
-                <option value="A">a</option>
-                <option value="B">b</option>
-                <option value="C">c</option>
-                <option value="D">d</option>
+                <option value="">Kies een afdeling</option>
+                <option value="A">Management</option>
+                <option value="B">It</option>
+                <option value="C">Onderhoud</option>
+                <option value="D">Facilitair</option>
                 <option value="E">e</option>
                 <option value="F">f</option>
         </select>
             </div>
             <div class="form-group">
-                <label for="prioriteit">Prioriteit:</label>
+                <label for="prioriteit">Done:</label>
                 <input type="checkbox" name="prioriteit" id="prioriteit">
-                <label for="prioriteit">Melding met prioriteit</label>
+                <label for="prioriteit">Done or niet done</label>
 
             </div>
             <div class="form-group">
-                <label for="melder">Naam melder:</label>
-                <input type="text" name="melder" id="melder" class="form-input">
+                <label for="melder">Username:</label>
+                <input type="text" name="melder" id="melder" class="form-input" placeholder="username">
             </div>
             <div class = "form-group">
-                <label for="newsletter">Nieuwsbrief:</label>
-                <input type="checkbox" name="newsletter" id="newsletter">
-                <label for="newsletter">Ik wil graag de nieuwsbrief ontvangen</label>
+                <label for="datetime">Deadline:</label>
+                <input type="datetime-local" name="datetime" id="datetime" class="form-input">
             </div>
             <div class="form-group">
-                <label for="info">Overige info:</label>
-                <textarea name="overig" id="overig" class="form-input" rows="4"></textarea>
+                <label for="info">Beschrijving:</label>
+                <input type="text" name="info" id="info" class="form-input" placeholder="beschrijving">
             </div>
 
         
