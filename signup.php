@@ -16,10 +16,10 @@
             <input type="password" placeholder="Creat Password" required>
             <input type="password" placeholder="Re-Enter password" required>     
         <div class="botton">
-            <button class="submit" type="submit"><a href="login.php">Sign Up</a></button> 
+            <button class="submit" type="submit"><a href="index.php">Sign Up</a></button> 
         </div>  
         <div class="signup">
-             Already have an account<a href="login.php"> log In</a>  
+             Already have an account<a href="index.php"> log In</a>  
         </div>
     </div>
 

@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <a href="create.php">Nieuwe melding &gt;</a>
     <main>
         <?php
         require_once '../backend/conn.php';
