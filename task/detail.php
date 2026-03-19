@@ -43,7 +43,6 @@
     echo "</pre>";
     ?>
     <main>
-
         <form action="../app/Http/Controllers/takencontroller.php" method="POST">
 
             <div class="form-group">
@@ -69,8 +68,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="status">Status</label>
-
+                <label for="status">Status:</label>
                 <input type="checkbox" name="status" id="status"
                     <?php if ($taken['status'] == 1) echo "checked"; ?>>
             </div>

@@ -11,11 +11,11 @@
 
     if(isset($_POST['status']))
     {
-        $prioriteit = 1;
+        $status = 1;
     }
     else
     {
-        $prioriteit = 0;
+        $status = 0;
     }
 
     require_once '../../../backend/conn.php';
