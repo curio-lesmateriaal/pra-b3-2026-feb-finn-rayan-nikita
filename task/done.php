@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/task.css">
     <title>TaskDone</title>
-    <?php require_once __DIR__.'/../header.php'; ?>
+    <?php require_once __DIR__ . '/../header.php'; ?>
 </head>
 
 <body>
@@ -24,17 +24,10 @@
     <main>
         <?php
         require_once '../backend/conn.php';
-        $query = "SELECT * FROM taken WHERE status = 1";
+        $query = "SELECT * FROM taken";
         $statement = $conn->prepare($query);
         $statement->execute();
         $takendone = $statement->fetchAll(PDO::FETCH_ASSOC);
-        ?>
-        <?php
-        require_once '../backend/conn.php';
-        $query = "SELECT * FROM taken WHERE status = 0";
-        $statement = $conn->prepare($query);
-        $statement->execute();
-        $takennotdone = $statement->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
         <section class="takenlijst-wrap">
