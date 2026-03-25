@@ -1,0 +1,154 @@
+
+.task-header {
+    background: #ffffffee;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(12px);
+}
+
+.task-brand {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-brand .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.task-brand nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.task-brand nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 100px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.task-brand nav a:hover {
+    background: #f5f7fb;
+}
+
+.task-brand .btn-action {
+    background: #7d8dff;
+    color: #fff;
+}
+
+.takenlijst-wrap {
+    max-width: 1024px;
+    margin: 34px auto;
+    padding: 0 20px 40px;
+}
+
+.takenlijst-wrap h1 {
+    text-align: center;
+    font-size: 2.1rem;
+    margin-bottom: 24px;
+    color: #2c2f41;
+}
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.task-card {
+    background: #f4f8ff;
+    border: 1px solid #d7e0ff;
+    border-radius: 18px;
+    box-shadow: 0 10px 15px rgba(43, 66, 115, 0.08);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 220px;
+}
+
+.task-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-card-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2b3364;
+}
+
+.task-edit {
+    text-decoration: none;
+    color: #5b6cff;
+    font-size: 1.05rem;
+}
+
+.task-desc {
+    margin: 0;
+    color: #525a7a;
+    min-height: 48px;
+}
+
+.task-meta {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 4px;
+    color: #5f6589;
+}
+
+.task-meta strong {
+    color: #333957;
+}
+
+.status {
+    margin-top: auto;
+    align-self: flex-start;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+.status.done {
+    background: #d7f5d9;
+    color: #1f773c;
+}
+
+.status.pending {
+    background: #fff4d6;
+    color: #a36300;
+}
+
+.task-footer {
+    text-align: center;
+    padding: 14px 10px;
+    border-top: 1px solid #eee;
+    color: #7180a5;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+    .task-brand {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .task-brand nav {
+        width: 100%;
+        justify-content: center;
+    }
+}

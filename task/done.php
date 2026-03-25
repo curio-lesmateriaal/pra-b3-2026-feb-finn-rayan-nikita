@@ -6,9 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/task.css">
     <title>TaskDone</title>
+    <?php require_once __DIR__.'/../header.php'; ?>
 </head>
 
 <body>
+    <header class="task-header">
+        <div class="task-brand">
+            <div class="logo">Developerland</div>
+            <nav>
+                <a href="../index.php">Home</a>
+                <a href="create.php" class="btn-action">Nieuwe melding</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
     <main>
         <?php
         require_once '../backend/conn.php';
@@ -25,86 +37,31 @@
         $takennotdone = $statement->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
-
-
-        <h1 class="H1taak">Takenlijst</h1>
-
-
-        <div class="forms">
-            <table>
-                <h1>Done</h1>
-                <tr>
-                    <th>Title</th>
-                    <th>Beschrijving</th>
-                    <th>Afdeling</th>
-                    <th>Deadline</th>
-                    <th class="user">User</th>
-                    <th class="aanpassen">Status</th>
-                    <th>Aanpassen</th>
-                </tr>
-                <?php
-                foreach ($takendone as $taak) {
-                ?>
-                    <tr>
-                        <td><?php echo $taak['titel']; ?></td>
-                        <td><?php echo $taak['beschrijving']; ?></td>
-                        <td><?php echo $taak['afdeling']; ?></td>
-                        <td><?php echo $taak['deadline']; ?></td>
-                        <td><?php echo $taak['user']; ?></td>
-                        <td>
-                            <?php
-                            if ($taak['status'] == 1) {
-                                echo "Done";
-                            } else {
-                                echo "Not Done";
-                            }
-                            ?>
-                        </td>
-                        <td><a href="detail.php?id=<?php echo $taak['id']; ?>">Detail</a></td>
-                    </tr>
-                <?php
-                }
-                ?>
-
-            </table>
-            <table>
-                <h1>Not done</h1>
-                <tr>
-                    <th>Title</th>
-                    <th>Beschrijving</th>
-                    <th>Afdeling</th>
-                    <th>Deadline</th>
-                    <th class="user">User</th>
-                    <th class="aanpassen">Status</th>
-                    <th>Aanpassen</th>
-                </tr>
-                <?php
-                foreach ($takennotdone as $taak) {
-                ?>
-                    <tr>
-                        <td><?php echo $taak['titel']; ?></td>
-                        <td><?php echo $taak['beschrijving']; ?></td>
-                        <td><?php echo $taak['afdeling']; ?></td>
-                        <td><?php echo $taak['deadline']; ?></td>
-                        <td><?php echo $taak['user']; ?></td>
-                        <td>
-                            <?php
-                            if ($taak['status'] == 1) {
-                                echo "Done";
-                            } else {
-                                echo "Not Done";
-                            }
-                            ?>
-                        </td>
-                        <td><a href="detail.php?id=<?php echo $taak['id']; ?>">Detail</a></td>
-                    </tr>
-                <?php
-                }
-                ?>
-
-            </table>
-        </div>
+        <section class="takenlijst-wrap">
+            <h1>Takenlijst</h1>
+            <div class="task-grid">
+                <?php foreach ($takendone as $taak) : ?>
+                    <article class="task-card">
+                        <div class="task-card-header">
+                            <h2><?php echo htmlspecialchars($taak['titel']); ?></h2>
+                            <a class="task-edit" href="detail.php?id=<?php echo $taak['id']; ?>">✏️</a>
+                        </div>
+                        <p class="task-desc"><?php echo htmlspecialchars($taak['beschrijving']); ?></p>
+                        <ul class="task-meta">
+                            <li><strong>Afdeling:</strong> <?php echo htmlspecialchars($taak['afdeling']); ?></li>
+                            <li><strong>Deadline:</strong> <?php echo htmlspecialchars($taak['deadline']); ?></li>
+                            <li><strong>User:</strong> <?php echo htmlspecialchars($taak['user']); ?></li>
+                        </ul>
+                        <div class="status <?php echo $taak['status'] == 1 ? 'done' : 'pending'; ?>">
+                            <?php echo $taak['status'] == 1 ? 'Done' : 'Not Done'; ?>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </section>
     </main>
+
+    <footer class="task-footer">2026 pra-b3 Nikita-Finn-Rayan</footer>
 </body>
 
 </html>
