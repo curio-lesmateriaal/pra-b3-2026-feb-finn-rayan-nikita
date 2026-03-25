@@ -1,3 +1,11 @@
+<?php session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: http://pra-b3-2026-feb-finn-rayan-nikita.test");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +22,12 @@
         <div class="task-brand">
             <div class="logo">Developerland</div>
             <nav>
+                <p>Welkom: <?php echo $_SESSION['username']?></p>
+
                 <a href="../index.php">Home</a>
                 <a href="create.php" class="btn-action">Nieuwe melding</a>
                 <a href="#contact">Contact</a>
+                <a href="../logout.php">Logout</a>
             </nav>
         </div>
     </header>

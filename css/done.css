@@ -29,7 +29,7 @@
     align-items: center;
 }
 
-.task-brand nav a {
+.task-brand nav a, .task-brand nav p {
     text-decoration: none;
     color: #333;
     font-weight: 600;
@@ -37,7 +37,6 @@
     border-radius: 100px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 .task-brand nav a:hover {
     background: #f5f7fb;
 }

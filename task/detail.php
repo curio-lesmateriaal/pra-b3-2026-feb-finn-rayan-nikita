@@ -1,3 +1,11 @@
+<?php 
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: http://pra-b3-2026-feb-finn-rayan-nikita.test");
+}
+
+?>
 <!doctype html>
 <html lang="nl">
 
