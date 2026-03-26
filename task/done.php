@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id'])) {
 
                 <a href="../index.php">Home</a>
                 <a href="create.php" class="btn-action">Nieuwe melding</a>
-                <a href="#contact">Contact</a>
+                <a href="../contact.php">Contact</a>
                 <a href="../logout.php">Logout</a>
             </nav>
         </div>
@@ -49,6 +49,7 @@ if (!isset($_SESSION['user_id'])) {
                         <div class="task-card-header">
                             <h2><?php echo htmlspecialchars($taak['titel']); ?></h2>
                             <a class="task-edit" href="detail.php?id=<?php echo $taak['id']; ?>">✏️</a>
+                            <a href="../app/Http/Controllers/takencontroller.php?id=<?php echo $taak['id']; ?>&action=delete">🗑</a>
                         </div>
                         <p class="task-desc"><?php echo htmlspecialchars($taak['beschrijving']); ?></p>
                         <ul class="task-meta">
